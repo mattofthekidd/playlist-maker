@@ -1,5 +1,4 @@
-const CLIENT_ID     = '00b49456c4994a4588d27d1c3250bdca';     // Your client id
-const CLIENT_SECRET = '7d133a7f99044b95bec815c9578b8f27'; // Your secret
+
 const REDIRECT_URI  = 'http://localhost:8888/callback';    // Your redirect uri
 const API_URL       = 'https://accounts.spotify.com/api/token'; //noticed this was used twice so I moved it here.
 const AUTH_URL      = 'https://accounts.spotify.com/authorize?';

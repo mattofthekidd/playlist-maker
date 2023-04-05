@@ -1,0 +1,25 @@
+#login-modal-body {
+    background-color: green;
+    .content {
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        // margin-top: 1em;
+    }
+
+    .login-btns {
+        
+    }
+    #facebook {
+        background: blue;
+        color: white;
+    } 
+    #apple {
+        background: black;
+        color: white;
+    }
+    #google {
+        //this is a 7:1 contrast ratio which passes WCAG AA and AAA.
+        background: white;
+        color: #595959;
+    }
+}

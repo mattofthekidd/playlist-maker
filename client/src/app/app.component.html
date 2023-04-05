@@ -1,7 +1,9 @@
 <div>
-<mat-toolbar>
-  <span>toolbar</span>
-  <button mat-button (click)="openLoginModal()">login</button>
-</mat-toolbar>
-  <router-outlet></router-outlet>
+  <mat-toolbar class="toolbar">
+    <span>toolbar</span>
+    <button mat-raised-button (click)="loginRequest()">login</button>
+  </mat-toolbar>
+  <div class="main">
+    <router-outlet></router-outlet>
+  </div>
 </div>

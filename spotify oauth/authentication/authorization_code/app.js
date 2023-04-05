@@ -48,7 +48,7 @@ app.get('/login', function(req, res) {
   res.redirect(constants.AUTH_URL +
     querystring.stringify({
       response_type: 'code',
-      client_id: constants.CLIENT_ID,
+      client_id: clientConstants.CLIENT_ID,
       scope: scope,
       redirect_uri: constants.REDIRECT_URI,
       state: state
@@ -79,7 +79,7 @@ app.get('/callback', function(req, res) {
         grant_type: 'authorization_code'
       },
       headers: {
-        'Authorization': 'Basic ' + (new Buffer(constants.CLIENT_ID + ':' + constants.CLIENT_SECRET).toString('base64'))
+        'Authorization': 'Basic ' + (new Buffer(clientConstants.CLIENT_ID + ':' + clientConstants.CLIENT_SECRET).toString('base64'))
       },
       json: true
     };
@@ -123,7 +123,7 @@ app.get('/refresh_token', function(req, res) {
   const refresh_token = req.query.refresh_token;
   const authOptions = {
     url: constants.API_URL,
-    headers: { 'Authorization': 'Basic ' + (new Buffer(constants.CLIENT_ID + ':' + constants.CLIENT_SECRET).toString('base64')) },
+    headers: { 'Authorization': 'Basic ' + (new Buffer(clientConstants.CLIENT_ID + ':' + clientConstants.CLIENT_SECRET).toString('base64')) },
     form: {
       grant_type: 'refresh_token',
       refresh_token: refresh_token

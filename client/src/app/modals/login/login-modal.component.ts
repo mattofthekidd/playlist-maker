@@ -12,6 +12,10 @@ export class LoginModalComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public authenticate = (loginMethod: string) => {
+    // this.spotifyAuth.login();
+    console.log(`sign in ${loginMethod}`);
+  }
   
 
 }

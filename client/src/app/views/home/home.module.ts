@@ -1,19 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LoginModalComponent } from './login-modal.component';
+import { HomeComponent } from './home.component';
 import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
-
 @NgModule({
   declarations: [
-    LoginModalComponent
+    HomeComponent
   ],
   imports: [
     CommonModule,
     MatButtonModule,
   ]
 })
-export class LoginModalModule { }
+export class HomeModule { }

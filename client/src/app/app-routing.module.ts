@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LandingPageComponent } from './views/landing-page/landing-page.component';
+import { HomeComponent } from './views/home/home.component';
 import { LoginModalComponent } from './modals/login/login-modal.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginModalComponent}, //TODO: setup a canActivate guard for this
-  {path: 'landingPage', component: LandingPageComponent},
-  {path: '**', redirectTo: 'landingPage'}, //TODO: route to a 404 page
-  {path: '', redirectTo: 'landingPage', pathMatch: 'full'}
+  {path: 'home', component: HomeComponent},
+  {path: '**', redirectTo: 'home'}, //TODO: route to a 404 page
+  {path: '', redirectTo: 'home', pathMatch: 'full'}
 ];
 
 @NgModule({

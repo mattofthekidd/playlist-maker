@@ -6,3 +6,4 @@ API/bin/
 API/obj/
 API/Constants/API_CONSTANTS.cs
 API/appsettings.Development.json
+API/appsettings.json

@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
   constructor(private dialog: MatDialog, private spotifyAuthService: SpotifyAuthService) {}
 
   ngOnInit(): void {
-
+    this.loginRequest();
   }
 
   openLoginModal() {
@@ -27,6 +27,7 @@ export class AppComponent implements OnInit {
   public async loginRequest() {
     //TODO return to this after Observables lesson in my Udemy course.
     // await this.spotifyAuthService.login().subscribe(x => console.log("sdasdf"));
+    this.spotifyAuthService.login();
   }
 
 }

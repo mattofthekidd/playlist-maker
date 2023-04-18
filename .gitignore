@@ -5,3 +5,4 @@ spotify oauth/authentication/authorization_code/clientConstants.js
 API/bin/
 API/obj/
 API/Constants/API_CONSTANTS.cs
+API/appsettings.Development.json

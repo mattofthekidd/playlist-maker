@@ -1,9 +1,3 @@
 
-client/src/app/constants/client.ts
-spotify oauth/authentication/authorization_code/client-constants.js
-spotify oauth/authentication/authorization_code/clientConstants.js
 API/bin/
 API/obj/
-API/Constants/API_CONSTANTS.cs
-API/appsettings.Development.json
-API/appsettings.json

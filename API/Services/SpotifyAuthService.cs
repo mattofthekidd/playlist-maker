@@ -6,7 +6,7 @@ using SpotifyAPI.Web;
 namespace API.Services {
     public interface ISpotifyAuthService {
         Uri Login();
-        Task GetCallback(string code);
+        Task<bool> GetCallback(string code);
     }
 
     public class SpotifyAuthService : ISpotifyAuthService {
@@ -28,7 +28,7 @@ namespace API.Services {
             
             return loginRequest.ToUri();
         }
-        public async Task GetCallback(string code) {
+        public async Task<bool> GetCallback(string code) {
               var response = await new OAuthClient().RequestToken(
                 new AuthorizationCodeTokenRequest(
                     _config["SPOTIFY_CLIENT_ID"],
@@ -40,6 +40,7 @@ namespace API.Services {
 
             var spotify = new SpotifyClient(response.AccessToken);
             // Also important for later: response.RefreshToken
+            return true;
         }
 
     }

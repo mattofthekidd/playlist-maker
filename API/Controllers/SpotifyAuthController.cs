@@ -4,33 +4,22 @@ using Microsoft.AspNetCore.Mvc;
 namespace API.Controllers {
     public class SpotifyAuthController : BaseApiController {
         private ISpotifyClientBuilder _spotifyClientBuilder;
-        private readonly ISpotifyAuthService _authService;
+        private readonly ISpotifyAuthService _spotifyAuthService;
 
-        public SpotifyAuthController(ISpotifyClientBuilder spotifyClientBuilder, ISpotifyAuthService authService) {
+        public SpotifyAuthController(ISpotifyClientBuilder spotifyClientBuilder, ISpotifyAuthService spotifyAuthService) {
             _spotifyClientBuilder = spotifyClientBuilder;
-            _authService = authService;
+            _spotifyAuthService = spotifyAuthService;
         }
-
-        // [HttpPost("login")]
-        // public async Task<SpotifyClient> Login() {
-        //     SpotifyClient spotify = await _spotifyClientBuilder.BuildClient();
-        //     return spotify;
-        // }
 
         [HttpPost("login")]
         public Uri Login() {
-            return _authService.Login();
+            return _spotifyAuthService.Login();
         }
 
-        [HttpPost("callback")]
-        public async Task<RedirectResult> Callback(string code) {
-            await _authService.GetCallback(code);
-            return Redirect("http://localhost:4200/home");
+        [HttpPost("routeCallback")]
+        public async Task<bool> RouteCallback(string code) {
+            return await _spotifyAuthService.GetCallback(code);
+            // return Redirect("http://localhost:4200/home");
         }
-
-        // [HttpPost("test")]
-        // public IActionResult Test() {
-        //     return StatusCode(200, "boyoooh");
-        // }
     }
 }

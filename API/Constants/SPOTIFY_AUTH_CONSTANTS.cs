@@ -16,7 +16,7 @@ public static class SPOTIFY_AUTH_CONSTANTS
     };
 
 
-    public readonly static string REDIRECT_URI = "https://localhost:7239/api/spotifyauth/callback";    // Your redirect uri
+    public readonly static string REDIRECT_URI = "http://localhost:4200/callback";    // Your redirect uri
     public readonly static string API_URL      = "https://accounts.spotify.com/api/token"; //noticed this was used twice so I moved it here.
     public readonly static string AUTH_URL     = "https://accounts.spotify.com/authorize?";
 }

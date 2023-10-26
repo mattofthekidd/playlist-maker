@@ -1,25 +1,26 @@
-using API.Services;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+
 
 namespace API.Controllers {
     public class SpotifyAuthController : BaseApiController {
-        private ISpotifyClientBuilder _spotifyClientBuilder;
-        private readonly ISpotifyAuthService _spotifyAuthService;
+        interface Response {
+            string Code { get; set; }
+            string State { get; set; }
+        }
+        private readonly ILogger<SpotifyAuthController> _logger;
 
-        public SpotifyAuthController(ISpotifyClientBuilder spotifyClientBuilder, ISpotifyAuthService spotifyAuthService) {
-            _spotifyClientBuilder = spotifyClientBuilder;
-            _spotifyAuthService = spotifyAuthService;
+        public SpotifyAuthController(ILogger<SpotifyAuthController> logger) {
+            _logger = logger;
         }
 
-        [HttpPost("login")]
-        public Uri Login() {
-            return _spotifyAuthService.Login();
+        public void StoreUserToken(string s) {
+
         }
 
-        [HttpPost("routeCallback")]
-        public async Task<bool> RouteCallback(string code) {
-            return await _spotifyAuthService.GetCallback(code);
-            // return Redirect("http://localhost:4200/home");
-        }
     }
 }

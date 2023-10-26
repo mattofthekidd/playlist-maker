@@ -5,8 +5,9 @@ using SpotifyAPI.Web;
 
 namespace API.Services {
     public interface ISpotifyAuthService {
-        Uri Login();
-        Task<bool> GetCallback(string code);
+        // Uri Login();
+        // Task<bool> GetCallback(string code);
+
     }
 
     public class SpotifyAuthService : ISpotifyAuthService {
@@ -16,32 +17,32 @@ namespace API.Services {
             _config = config;
         }
 
-        public Uri Login() {
-            var loginRequest = new LoginRequest(
-                new Uri(SPOTIFY_AUTH_CONSTANTS.REDIRECT_URI),
-                // new Uri(APP_CONSTANTS.BASE_URL + "/api/spotifyauth/callback"),
-                _config["SPOTIFY_CLIENT_ID"],
-                LoginRequest.ResponseType.Code
-            ) {
-                Scope = SPOTIFY_AUTH_CONSTANTS.SCOPES
-            };
-            
-            return loginRequest.ToUri();
-        }
-        public async Task<bool> GetCallback(string code) {
-              var response = await new OAuthClient().RequestToken(
-                new AuthorizationCodeTokenRequest(
-                    _config["SPOTIFY_CLIENT_ID"],
-                    _config["SPOTIFY_CLIENT_SECRET"],
-                    code,
-                    new Uri(SPOTIFY_AUTH_CONSTANTS.REDIRECT_URI)
-                )
-            );
+        // public Uri Login() {
+        //     var loginRequest = new LoginRequest(
+        //         new Uri(SPOTIFY_AUTH_CONSTANTS.REDIRECT_URI),
+        //         // new Uri(APP_CONSTANTS.BASE_URL + "/api/spotifyauth/callback"),
+        //         _config["SPOTIFY_CLIENT_ID"],
+        //         LoginRequest.ResponseType.Code
+        //     ) {
+        //         Scope = SPOTIFY_AUTH_CONSTANTS.SCOPES
+        //     };
 
-            var spotify = new SpotifyClient(response.AccessToken);
-            // Also important for later: response.RefreshToken
-            return true;
-        }
+        //     return loginRequest.ToUri();
+        // }
+        // public async Task<bool> GetCallback(string code) {
+        //       var response = await new OAuthClient().RequestToken(
+        //         new AuthorizationCodeTokenRequest(
+        //             _config["SPOTIFY_CLIENT_ID"],
+        //             _config["SPOTIFY_CLIENT_SECRET"],
+        //             code,
+        //             new Uri(SPOTIFY_AUTH_CONSTANTS.REDIRECT_URI)
+        //         )
+        //     );
+
+        //     var spotify = new SpotifyClient(response.AccessToken);
+        //     // Also important for later: response.RefreshToken
+        //     return true;
+        // }
 
     }
 }

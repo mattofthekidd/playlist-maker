@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { MatLegacyDialog as MatDialog, MatLegacyDialogRef as MatDialogRef } from '@angular/material/legacy-dialog';
 import { LoginModalComponent } from './modals/login/login-modal.component';
 import { SpotifyAuthService } from './_services/spotify-auth.service';
 

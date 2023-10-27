@@ -1,1 +1,0 @@
-export const BASE_URL: string = 'https://localhost:7239/api' as const;

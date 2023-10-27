@@ -1,6 +1,6 @@
 export const spotifyAuth = {
-  client_id: '',
-  client_secret: '',
+  client_id: '00b49456c4994a4588d27d1c3250bdca',
+  client_secret: 'b49462e48d784c06a4dca32893d347f5',
 } as const;
 
 export const spotifyLinks = {
@@ -8,7 +8,7 @@ export const spotifyLinks = {
   redirectUri: 'http://localhost:4200/callback',
 } as const;
 
-const spotifyScopes = [
+export const spotifyScopes = [
   'ugc-image-upload',
   'user-read-recently-played',
   'user-top-read',

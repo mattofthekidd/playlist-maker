@@ -1,7 +1,12 @@
 <mat-toolbar>
   <span>Playlist Maker</span>
   <span class="spacer"></span>
-  <button mat-icon-button class="search-button" aria-label="Search Button">
+  <button
+    mat-icon-button
+    class="search-button"
+    aria-label="Search Button"
+    (click)="searchMusic()"
+  >
     <mat-icon>search</mat-icon>
   </button>
 </mat-toolbar>

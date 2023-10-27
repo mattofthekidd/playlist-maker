@@ -6,6 +6,7 @@ export const spotifyAuth = {
 export const spotifyLinks = {
   spotifyApiUrl: 'https://accounts.spotify.com/authorize',
   redirectUri: 'http://localhost:4200/callback',
+  backendUrl: 'https://localhost:5001',
 } as const;
 
 export const spotifyScopes = [

@@ -3,31 +3,22 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using API.Services;
 using Microsoft.AspNetCore.Mvc;
 
 
 namespace API.Controllers {
     public class SpotifyAuthController : BaseApiController {
-        private const string SpotifyTokenEndpoint = "https://accounts.spotify.com/api/token";
-        private const string YourSpotifyClientId = "YOUR_SPOTIFY_CLIENT_ID";
-        private const string YourSpotifyClientSecret = "YOUR_SPOTIFY_CLIENT_SECRET";
 
-        public async Task<IActionResult> Callback(string authorizationCode) {
+        private SpotifyAuthService _spotifyAuthService;
+        public SpotifyAuthController(SpotifyAuthService spotifyAuthService) {
+            _spotifyAuthService = spotifyAuthService;
+        }
+
+        [HttpPost("Callback")]
+        public async Task<IActionResult> Callback([FromBody]string authorizationCode) {
             try {
-                using var httpClient = new HttpClient();
-                var requestBody = new Dictionary<string, string>
-                {
-                    { "code", authorizationCode },
-                    { "grant_type", "authorization_code" },
-                    { "redirect_uri", SPOTIFY_AUTH_CONSTANTS.REDIRECT_URI },
-                };
-
-                var basicAuthHeaderValue = Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes($"{SPOTIFY_AUTH_CONSTANTS.}:{YourSpotifyClientSecret}"));
-                httpClient.DefaultRequestHeaders.Add("Authorization", $"Basic {basicAuthHeaderValue}");
-
-                var content = new FormUrlEncodedContent(requestBody);
-                var response = await httpClient.PostAsync(SpotifyTokenEndpoint, content);
-
+                var response = await _spotifyAuthService.ExchangeToken(authorizationCode);
                 if (response.IsSuccessStatusCode) {
                     var responseContent = await response.Content.ReadAsStringAsync();
                     return Ok(responseContent);

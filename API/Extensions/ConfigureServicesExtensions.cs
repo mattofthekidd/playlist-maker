@@ -1,3 +1,4 @@
+using System.Configuration;
 using API.Services;
 using Microsoft.AspNetCore.Authentication.Cookies;
 
@@ -7,9 +8,14 @@ namespace API.Extensions
     {
         public static IServiceCollection ConfigureServices(this IServiceCollection services, IConfiguration config)
         {
+            config = new ConfigurationBuilder()
+              .SetBasePath(Directory.GetCurrentDirectory())
+              .AddJsonFile("appsettings.json")
+              .Build();
             services.AddHttpContextAccessor();
 
             services.AddControllers();
+
 
             services.AddAuthorization(options =>
             {

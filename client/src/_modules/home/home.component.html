@@ -1,20 +1,42 @@
-<mat-toolbar>
+<mat-toolbar class="toolbar">
   <span>Playlist Maker</span>
-  <span class="spacer"></span>
-  <button
-    mat-icon-button
-    class="search-button"
-    aria-label="Search Button"
-    (click)="searchMusic()"
-  >
-    <mat-icon>search</mat-icon>
-  </button>
-  <button
-    mat-button
-    class="login-button"
-    aria-label="Login Button"
-    (click)="login()"
-  >
-    Login
-  </button>
+
+  <span class="actions">
+    <button
+      mat-icon-button
+      class="search-button"
+      aria-label="Search Button"
+      (click)="searchMusic()"
+    >
+      <mat-icon>search</mat-icon>
+    </button>
+    <button
+      mat-button
+      class="login-button"
+      aria-label="Login Button"
+      (click)="login()"
+    >
+      Login
+    </button>
+  </span>
 </mat-toolbar>
+<div class="body">
+  <div class="side-menu">
+    side menu
+    <mat-list>
+      <mat-list-item *ngFor="let item of fakeList_sideMenu">
+        {{ item.name }} - {{ item.description }}
+      </mat-list-item>
+    </mat-list>
+  </div>
+  <div class="main">
+    <!-- title bar goes here -->
+    Main Menu
+    <!-- name of playlist -->
+    <mat-list>
+      <mat-list-item *ngFor="let item of fakeList_sideMenu">
+        {{ item.name }} - {{ item.description }}
+      </mat-list-item>
+    </mat-list>
+  </div>
+</div>

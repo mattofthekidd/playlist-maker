@@ -1,3 +1,28 @@
-.spacer {
-    flex: 1 1 auto;
+:host {
+  display: flex;
+  flex-direction: column;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.body {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  background-color: bisque;
+  
+  .side-menu {
+    display: flex;
+    flex: 1;
+    border: 1px solid red;
   }
+  
+  .main {
+    display: flex;
+    flex: 3;
+    border: 1px solid green;
+  }
+}

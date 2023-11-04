@@ -2,3 +2,4 @@
 API/bin/
 API/obj/
 .vs
+node_modules

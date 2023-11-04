@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@angular/cli": "^16.2.8"
+  },
+  "volta": {
+    "node": "18.16.0",
+    "npm": "9.5.1"
+  }
+}

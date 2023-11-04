@@ -3,26 +3,34 @@
   flex-direction: column;
 }
 
-.toolbar {
+.toolbar, .actions,{
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  background-color: darkslategray;
+  color:white;
 }
 
 .body {
   display: flex;
-  flex: 1;
+  flex: 1 1 auto;
   flex-direction: row;
-  background-color: bisque;
-  
-  .side-menu {
+  background-color: darkslategray;
+  //background-color: rgb(236, 222, 222);
+
+  .side-menu, .side-menu-top {
     display: flex;
-    flex: 1;
+    flex: 1 1 auto;
+    flex-direction: column;
     border: 1px solid red;
+    color: white;
   }
   
   .main {
     display: flex;
-    flex: 3;
+    flex: 3 1 auto;
+    flex-direction: column;
     border: 1px solid green;
+    color: white
   }
 }

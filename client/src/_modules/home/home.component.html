@@ -6,9 +6,19 @@
       mat-icon-button
       class="search-button"
       aria-label="Search Button"
+      matTooltip="Search"
       (click)="searchMusic()"
     >
       <mat-icon>search</mat-icon>
+    </button>
+    <button
+      mat-icon-button
+      class="account"
+      aria-label="Account Button"
+      (click)="account()"
+      matTooltip="Account"
+    >
+      <mat-icon>person</mat-icon>
     </button>
     <button
       mat-button
@@ -21,21 +31,43 @@
   </span>
 </mat-toolbar>
 <div class="body">
-  <div class="side-menu">
-    side menu
-    <mat-list>
-      <mat-list-item *ngFor="let item of fakeList_sideMenu">
-        {{ item.name }} - {{ item.description }}
+  <div>
+    Side menu
+    <div class="side-menu-top">
+      side menu top
+      <button mat-button color="basic" mat-stroked-button (click)="loadHome()">
+        Home
+      </button>
+      <button
+        mat-button
+        color="basic"
+        mat-stroked-button
+        (click)="loadLibrary()"
+      >
+        Library
+      </button>
+    </div>
+    <div class="side-menu">
+      side menu bottom
+      <mat-list-item style="color: white">
+        <p matLine>white Text</p>
       </mat-list-item>
-    </mat-list>
+      <mat-action-list>
+        <mat-list-item *ngFor="let item of fakeList_sideMenu">
+          {{ item.name }} - {{ item.description }}
+        </mat-list-item>
+      </mat-action-list>
+    </div>
   </div>
+
   <div class="main">
+    <div>Main Menu</div>
     <!-- title bar goes here -->
-    Main Menu
+    <div>Title bar</div>
     <!-- name of playlist -->
     <mat-list>
-      <mat-list-item *ngFor="let item of fakeList_sideMenu">
-        {{ item.name }} - {{ item.description }}
+      <mat-list-item *ngFor="let item of fakeList_mainMenu">
+        {{ item.name }} by {{ item.description }}
       </mat-list-item>
     </mat-list>
   </div>

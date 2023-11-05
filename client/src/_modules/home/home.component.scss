@@ -1,21 +1,22 @@
 :host {
   display: flex;
   flex-direction: column;
+  background-color: black;
 }
 
 .toolbar, .actions, {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: darkslategray;
+  background-color: black;
   color:white;
+  border-radius: 20px;
 }
 
 .spotify-icon {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: darkslategray;
   color:white;
 }
 
@@ -23,21 +24,33 @@
   display: flex;
   flex: 1 1 auto;
   flex-direction: row;
-  background-color: darkslategray;
+  // background-color: rgb(21, 21, 21);
+  border-radius: 20px;
 
-  .side-menu, .side-menu-top {
+  .side-menu, {
     display: flex;
     flex: 1 1 auto;
     flex-direction: column;
     color: white;
+    border-radius: 20px;
+    background-color: rgb(21, 21, 21);
   }
 
-  .vert-divider {
+    .side-menu-top {
+      display: flex;
+      flex: 1 1 auto;
+      flex-direction: column;
+      color: white;
+      border-radius: 20px;
+      background-color: rgb(21, 21, 21);
+  }
+  gap: 4px;
+  /*.vert-divider {
     display: flex;
     flex-direction: row;
     border: 1px solid black;
     min-height: 100vh;
-  }
+  }*/
 
   .hori-divider {
     display: flex;
@@ -49,8 +62,9 @@
     display: flex;
     flex: 3 1 auto;
     flex-direction: column;
-    // border: 1px solid green;
-    color: white
+    color: white;
+    border-radius: 20px;
+    background-color: rgb(21, 21, 21);
   }
 }
 

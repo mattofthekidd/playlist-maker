@@ -46,9 +46,8 @@
 </mat-toolbar>
 <div class="body">
   <div>
-    <span class="item">Side menu</span>
     <div class="side-menu-top">
-      side menu top
+      <span class="item"> menu top</span>
       <button mat-button color="basic" mat-stroked-button (click)="loadHome()">
         Home
       </button>
@@ -62,13 +61,8 @@
       </button>
     </div>
 
-    <mat-divider [vertical]="false" class="hori-divider"></mat-divider>
-
-    <div class="side-menu">
-      side menu bottom
-      <mat-list-item style="color: white">
-        <p matLine>white Text</p>
-      </mat-list-item>
+    <div class="side-menu-bottom">
+      <span class="item">side menu bottom</span>
       <mat-action-list>
         <mat-list-item *ngFor="let item of fakeList_sideMenu">
           <span class="item">{{ item.name }} - {{ item.description }}</span>
@@ -76,8 +70,6 @@
       </mat-action-list>
     </div>
   </div>
-
-  <mat-divider [vertical]="true" class="vert-divider"></mat-divider>
 
   <div class="main">
     <div>Main Menu</div>

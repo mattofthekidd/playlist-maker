@@ -1,5 +1,18 @@
 <mat-toolbar class="toolbar">
-  <span>Playlist Maker</span>
+  <span
+    >Playlist Maker
+    <!-- <img cImg fluid src="assets/SpotifyLogoRGBGreen.png" /> -->
+  </span>
+
+  <span class="spotify-icon">
+    <img
+      Src="/assets/SpotifyLogoRGBGreen.png"
+      object-fit:
+      cover
+      width="auto"
+      height="30vh"
+    />
+  </span>
 
   <span class="actions">
     <button
@@ -32,7 +45,7 @@
 </mat-toolbar>
 <div class="body">
   <div>
-    Side menu
+    <span class="item">Side menu</span>
     <div class="side-menu-top">
       side menu top
       <button mat-button color="basic" mat-stroked-button (click)="loadHome()">
@@ -47,6 +60,9 @@
         Library
       </button>
     </div>
+
+    <mat-divider [vertical]="false" class="hori-divider"></mat-divider>
+
     <div class="side-menu">
       side menu bottom
       <mat-list-item style="color: white">
@@ -54,11 +70,13 @@
       </mat-list-item>
       <mat-action-list>
         <mat-list-item *ngFor="let item of fakeList_sideMenu">
-          {{ item.name }} - {{ item.description }}
+          <span class="item">{{ item.name }} - {{ item.description }}</span>
         </mat-list-item>
       </mat-action-list>
     </div>
   </div>
+
+  <mat-divider [vertical]="true" class="vert-divider"></mat-divider>
 
   <div class="main">
     <div>Main Menu</div>
@@ -67,7 +85,7 @@
     <!-- name of playlist -->
     <mat-list>
       <mat-list-item *ngFor="let item of fakeList_mainMenu">
-        {{ item.name }} by {{ item.description }}
+        <span class="item"> {{ item.name }} by {{ item.description }} </span>
       </mat-list-item>
     </mat-list>
   </div>

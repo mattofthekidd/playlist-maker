@@ -7,6 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { SpotifyAuthService } from 'src/_services/spotify-auth.service';
 import { MatListModule } from '@angular/material/list';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-home',
@@ -19,6 +20,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatIconModule,
     MatListModule,
     MatTooltipModule,
+    NgOptimizedImage,
   ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],

@@ -3,7 +3,15 @@
   flex-direction: column;
 }
 
-.toolbar, .actions,{
+.toolbar, .actions, {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: darkslategray;
+  color:white;
+}
+
+.spotify-icon {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -16,21 +24,37 @@
   flex: 1 1 auto;
   flex-direction: row;
   background-color: darkslategray;
-  //background-color: rgb(236, 222, 222);
 
   .side-menu, .side-menu-top {
     display: flex;
     flex: 1 1 auto;
     flex-direction: column;
-    border: 1px solid red;
     color: white;
   }
-  
+
+  .vert-divider {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid black;
+    min-height: 100vh;
+  }
+
+  .hori-divider {
+    display: flex;
+    flex-direction: colomn;
+    border: 1px solid black;
+  }
+
   .main {
     display: flex;
     flex: 3 1 auto;
     flex-direction: column;
-    border: 1px solid green;
+    // border: 1px solid green;
     color: white
   }
+}
+
+.item {
+  display: flex;
+  color: white;
 }
